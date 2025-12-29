@@ -32,16 +32,37 @@ export default function About() {
           {/* Content */}
           <div className="space-y-10">
             <div>
-              <div className="text-[#0066CC] mb-6" style={{ fontWeight: '600', letterSpacing: '0.1em', fontSize: '13px' }}>
+              <div className="text-[#1B2D4B] mb-6" style={{ fontWeight: '600', letterSpacing: '0.1em', fontSize: '13px' }}>
                 WHO WE ARE
               </div>
-              <h2 className="text-black mb-8" style={{ fontSize: 'clamp(40px, 5vw, 64px)', fontWeight: '700', lineHeight: '1.1', letterSpacing: '-0.03em' }}>
-                We don't just fill seats. We build legacies.
+              <h2 className="mb-8" style={{ fontSize: 'clamp(40px, 5vw, 64px)', fontWeight: '700', lineHeight: '1.1', letterSpacing: '-0.03em' }}>
+                <span 
+                  className="block"
+                  style={{ 
+                    backgroundImage: 'linear-gradient(to right, #1B2D4B, #1B2D4B 70%, #1F68B2)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text'
+                  }}
+                >
+                  We don't just fill seats.
+                </span>
+                <span 
+                  className="block"
+                  style={{ 
+                    backgroundImage: 'linear-gradient(to right, #1B2D4B, #1F68B2 30%, #1F68B2)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text'
+                  }}
+                >
+                  We build legacies.
+                </span>
               </h2>
-              <p className="text-gray-600 mb-6" style={{ fontSize: '19px', lineHeight: '1.6', fontWeight: '400' }}>
+              <p className="text-gray-600 mb-6" style={{ fontSize: '16px', lineHeight: '1.6', fontWeight: '400' }}>
                 JobLadder redefines recruitment. We're a strategic partner for companies building exceptional teams and professionals pursuing meaningful careers.
               </p>
-              <p className="text-gray-600" style={{ fontSize: '19px', lineHeight: '1.6', fontWeight: '400' }}>
+              <p className="text-gray-600" style={{ fontSize: '16px', lineHeight: '1.6', fontWeight: '400' }}>
                 Through deep industry expertise and a refined understanding of what makes teams thrive, we've successfully placed 500+ professionals across diverse sectors.
               </p>
             </div>
@@ -65,7 +86,7 @@ export default function About() {
           {values.map((value, index) => (
             <div key={index} className="group relative perspective">
               <div className="absolute inset-0 bg-gradient-to-br from-[#0066CC]/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="relative bg-white border border-black/5 rounded-3xl p-8 hover:border-[#0066CC]/20 transition-all duration-300 transform-gpu group-hover:rotate-y-2 group-hover:-rotate-x-2 group-hover:scale-105">
+              <div className="relative bg-white border border-black/5 rounded-3xl p-8 hover:border-[#1B2D4B]/20 transition-all duration-300 transform-gpu group-hover:rotate-y-2 group-hover:-rotate-x-2 group-hover:scale-105">
                 <div className="w-14 h-14 bg-[#1e3a8a]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#1e3a8a] group-hover:scale-110 transition-all">
                   <value.icon className="text-[#1e3a8a] group-hover:text-white transition-colors" size={24} />
                 </div>

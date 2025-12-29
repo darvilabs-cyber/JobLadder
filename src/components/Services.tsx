@@ -49,7 +49,7 @@ export default function Services() {
   ];
 
   return (
-    <div className="py-32 lg:py-40 bg-gradient-to-br from-blue-50 via-white to-blue-50/50 relative overflow-hidden">
+    <div className="pt-16 pb-32 lg:pt-20 lg:pb-40 bg-gradient-to-br from-blue-50 via-white to-blue-50/50 relative overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-40">
         <div className="absolute top-20 right-10 w-96 h-96 bg-[#0066CC]/10 rounded-full blur-3xl" />
@@ -59,55 +59,61 @@ export default function Services() {
 
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <div className="text-[#0066CC] mb-6" style={{ fontWeight: '600', letterSpacing: '0.1em', fontSize: '13px' }}>
+        <div className="text-center max-w-4xl mx-auto mb-20">
+          <div className="text-[#1B2D4B] mb-6" style={{ fontWeight: '600', letterSpacing: '0.1em', fontSize: '13px' }}>
             WHAT WE DO
           </div>
-          <h2 className="text-black mb-6" style={{ fontSize: 'clamp(40px, 5vw, 64px)', fontWeight: '700', lineHeight: '1.1', letterSpacing: '-0.03em' }}>
-            Full-spectrum talent solutions
+          <h2 className="mb-6 whitespace-nowrap" style={{ fontSize: 'clamp(32px, 5vw, 64px)', fontWeight: '700', lineHeight: '1.1', letterSpacing: '-0.03em' }}>
+            <span 
+              style={{ 
+                backgroundImage: 'linear-gradient(to right, #1B2D4B, #1B2D4B 60%, #1F68B2)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}
+            >
+              Full-spectrum talent solutions
+            </span>
           </h2>
-          <p className="text-gray-600" style={{ fontSize: '19px', lineHeight: '1.6' }}>
+          <p className="text-gray-600" style={{ fontSize: '16px', lineHeight: '1.6' }}>
             Comprehensive recruitment and HR services designed to elevate your organization
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-32">
+        <div className="grid lg:grid-cols-2 gap-6 mb-16 max-w-5xl mx-auto">
           {services.map((service, idx) => (
             <div key={idx} className="group relative">
               {/* Card Glow Effect */}
               <div className="absolute -inset-1 bg-gradient-to-r from-[#0066CC] to-[#FF8C42] rounded-[40px] opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500" />
               
-              <div className="relative bg-white border border-gray-100 rounded-[32px] p-10 lg:p-12 hover:border-[#0066CC]/30 transition-all duration-300 hover:shadow-2xl hover:shadow-[#0066CC]/10 h-full">
+              <div className="relative bg-white border border-gray-100 rounded-[32px] p-6 lg:p-8 hover:border-[#0066CC] transition-all duration-300 hover:shadow-2xl hover:shadow-[#0066CC] h-full">
                 {/* Category Header */}
-                <div className="mb-10">
-                  <div className="w-20 h-20 bg-gradient-to-br from-[#0066CC] to-[#1e3a8a] rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-[#0066CC]/20">
-                    <service.icon size={36} className="text-white" />
-                  </div>
-                  <h3 className="text-black mb-3" style={{ fontSize: '36px', fontWeight: '700', letterSpacing: '-0.02em' }}>
+                <div className="mb-6">
+                  <h3 className="text-black mb-2" style={{ fontSize: '28px', fontWeight: '700', letterSpacing: '-0.02em' }}>
                     {service.category}
                   </h3>
-                  <p className="text-gray-600" style={{ fontSize: '17px', lineHeight: '1.6' }}>
+                  <p className="text-gray-600" style={{ fontSize: '14px', lineHeight: '1.6' }}>
                     {service.description}
                   </p>
                 </div>
                 
                 {/* Service Items */}
-                <div className="space-y-6">
+                <div className="space-y-4">
                   {service.items.map((item, itemIdx) => (
-                    <div key={itemIdx} className="group/item flex gap-5 p-5 rounded-2xl hover:bg-blue-50/50 transition-all duration-300 -mx-2">
-                      <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-[#0066CC]/10 to-[#0066CC]/5 rounded-xl flex items-center justify-center group-hover/item:bg-[#0066CC] group-hover/item:scale-110 transition-all duration-300">
-                        <item.icon size={24} className="text-[#0066CC] group-hover/item:text-white transition-colors" />
+                    <div key={itemIdx} className="group/item flex gap-4 p-4 rounded-2xl hover:bg-blue-50/50 transition-all duration-300 -mx-2">
+                      <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#0066CC]/10 to-[#0066CC]/5 rounded-xl flex items-center justify-center group-hover/item:bg-[#0066CC] group-hover/item:scale-110 transition-all duration-300">
+                        <item.icon size={20} className="text-[#0066CC] group-hover/item:text-white transition-colors" />
                       </div>
                       <div className="flex-1">
-                        <h4 className="text-black mb-2 group-hover/item:text-[#0066CC] transition-colors" style={{ fontWeight: '600', fontSize: '18px' }}>
+                        <h4 className="text-[#FF8C42] mb-1 group-hover/item:text-[#1B2D4B] transition-colors" style={{ fontWeight: '600', fontSize: '16px' }}>
                           {item.title}
                         </h4>
-                        <p className="text-gray-600" style={{ fontSize: '15px', lineHeight: '1.6' }}>
+                        <p className="text-gray-600" style={{ fontSize: '13px', lineHeight: '1.6' }}>
                           {item.description}
                         </p>
                       </div>
-                      <ArrowUpRight size={20} className="text-gray-400 opacity-0 group-hover/item:opacity-100 group-hover/item:text-[#0066CC] transition-all flex-shrink-0 mt-1" />
+                      <ArrowUpRight size={18} className="text-gray-400 opacity-0 group-hover/item:opacity-100 group-hover/item:text-[#0066CC] transition-all flex-shrink-0 mt-1" />
                     </div>
                   ))}
                 </div>

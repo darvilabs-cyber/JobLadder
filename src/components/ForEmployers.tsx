@@ -30,13 +30,31 @@ export default function ForEmployers({ scrollToSection }: ForEmployersProps) {
               </span>
             </div>
             
-            <h2 className="text-black" style={{ fontSize: 'clamp(40px, 5vw, 64px)', fontWeight: '700', lineHeight: '1.1', letterSpacing: '-0.03em' }}>
-              Hire talent that
-              <br />
-              <span className="text-[#0066CC]">moves the needle</span>
-            </h2>
-            
-            <p className="text-gray-600" style={{ fontSize: '19px', lineHeight: '1.6', fontWeight: '400' }}>
+            <h2 className="mb-8" style={{ fontSize: 'clamp(40px, 5vw, 64px)', fontWeight: '700', lineHeight: '1.1', letterSpacing: '-0.03em' }}>
+                <span 
+                  className="block"
+                  style={{ 
+                    backgroundImage: 'linear-gradient(to right, #1B2D4B, #1B2D4B 70%, #1F68B2)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text'
+                  }}
+                >
+                  Build the teams
+                </span>
+                <span 
+                  className="block"
+                  style={{ 
+                    backgroundImage: 'linear-gradient(to right, #1B2D4B, #1F68B2 30%, #1F68B2)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text'
+                  }}
+                >
+                  that moves needle.
+                </span>
+              </h2>
+            <p className="text-gray-600" style={{ fontSize: '16px', lineHeight: '1.6', fontWeight: '400' }}>
               Stop settling for good enough. Partner with JobLadder to access exceptional talent that transforms your business from the inside out.
             </p>
             
@@ -78,24 +96,24 @@ export default function ForEmployers({ scrollToSection }: ForEmployersProps) {
           <div className="relative group">
             <div className="absolute inset-0 bg-gradient-to-br from-[#0066CC]/20 to-blue-500/20 rounded-[32px] blur-2xl opacity-30 group-hover:opacity-50 transition-opacity" />
             <div className="relative bg-white border border-black/5 rounded-[32px] p-12 hover:border-[#0066CC]/20 transition-all">
-              <div className="text-[#0066CC] mb-4" style={{ fontSize: '80px', fontWeight: '700', letterSpacing: '-0.04em', lineHeight: '1' }}>
-                14
+              <div className="text-[#0066CC] mb-4" style={{ fontSize: '50px', fontWeight: '700', letterSpacing: '-0.04em', lineHeight: '1' }}>
+                2 to 4 weeks
               </div>
               <div className="text-black mb-6" style={{ fontSize: '24px', fontWeight: '600', letterSpacing: '-0.01em' }}>
                 Average days to placement
               </div>
-              <p className="text-gray-600" style={{ fontSize: '17px', lineHeight: '1.5' }}>
+              <p className="text-gray-600" style={{ fontSize: '14px', lineHeight: '1.5' }}>
                 Our streamlined process gets you the right talent, fast. Most clients see qualified candidates within the first week.
               </p>
               
               <div className="mt-12 pt-8 border-t border-black/5 grid grid-cols-2 gap-6">
                 <div>
-                  <div className="text-black mb-1" style={{ fontSize: '32px', fontWeight: '700' }}>200+</div>
+                  <div className="text-black mb-1" style={{ fontSize: '32px', fontWeight: '700' }}>10+</div>
                   <div className="text-gray-600" style={{ fontSize: '14px' }}>Partner Companies</div>
                 </div>
                 <div>
-                  <div className="text-black mb-1" style={{ fontSize: '32px', fontWeight: '700' }}>98%</div>
-                  <div className="text-gray-600" style={{ fontSize: '14px' }}>Retention Rate</div>
+                  <div className="text-black mb-1" style={{ fontSize: '32px', fontWeight: '700' }}>Expertise</div>
+                  <div className="text-gray-600" style={{ fontSize: '14px' }}>Hospitality, Security</div>
                 </div>
               </div>
             </div>

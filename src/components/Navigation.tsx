@@ -1,13 +1,14 @@
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
-import logoImage from 'figma:asset/1d69bf50650e29afadab06bb890d7fa340d807ce.png';
+import logoImage from '../assets/logo.png';
 
 interface NavigationProps {
   activeSection: string;
   scrollToSection: (section: string) => void;
+  showAnnouncement?: boolean;
 }
 
-export default function Navigation({ activeSection, scrollToSection }: NavigationProps) {
+export default function Navigation({ activeSection, scrollToSection, showAnnouncement = false }: NavigationProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
@@ -24,7 +25,7 @@ export default function Navigation({ activeSection, scrollToSection }: Navigatio
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-xl border-b border-black/5 z-40 mt-12">
+    <nav className="fixed left-0 right-0 bg-white/80 backdrop-blur-xl border-b border-black/5 z-40" style={{ top: showAnnouncement ? '48px' : '12px' }}>
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="flex justify-between items-center h-24">
           {/* Logo */}
@@ -35,7 +36,7 @@ export default function Navigation({ activeSection, scrollToSection }: Navigatio
             <img 
               src={logoImage} 
               alt="JobLadder Recruitment" 
-              className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
+              className="h-20 w-auto transition-transform duration-300 group-hover:scale-105"
             />
           </button>
 
@@ -45,12 +46,15 @@ export default function Navigation({ activeSection, scrollToSection }: Navigatio
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`px-4 py-2 rounded-xl transition-all ${
+                className={`px-4 py-2 transition-all relative ${
                   activeSection === item.id
-                    ? 'text-[#0066CC] bg-[#0066CC]/8'
-                    : 'text-gray-600 hover:text-black hover:bg-gray-50'
-                }`}
-                style={{ fontWeight: '500', fontSize: '15px' }}
+                    ? 'text-[#1B2D4B]'
+                    : 'text-gray-600 hover:text-black hover:bg-gray-50 rounded-xl'
+                } ${activeSection === item.id ? 'after:content-[""] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-[calc(100%+16px)] after:h-[3px] after:bg-[#1B2D4B] after:rounded-full' : ''}`}
+                style={{ 
+                  fontWeight: activeSection === item.id ? '700' : '500', 
+                  fontSize: '15px'
+                }}
               >
                 {item.label}
               </button>
@@ -86,12 +90,14 @@ export default function Navigation({ activeSection, scrollToSection }: Navigatio
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`block w-full text-left px-4 py-3 rounded-xl transition-all ${
+                className={`block w-full text-left px-4 py-3 transition-all relative ${
                   activeSection === item.id
-                    ? 'text-[#0066CC] bg-[#0066CC]/8'
+                    ? 'text-[#1B2D4B]'
                     : 'text-gray-600'
-                }`}
-                style={{ fontWeight: '500' }}
+                } ${activeSection === item.id ? 'after:content-[""] after:absolute after:bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-[calc(100%-32px)] after:h-[3px] after:bg-[#1B2D4B] after:rounded-full' : ''}`}
+                style={{ 
+                  fontWeight: activeSection === item.id ? '700' : '500'
+                }}
               >
                 {item.label}
               </button>

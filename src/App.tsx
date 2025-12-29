@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
+import Stats from './components/Stats';
 import About from './components/About';
 import Services from './components/Services';
 import ForEmployers from './components/ForEmployers';
@@ -33,14 +34,14 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Announcement Banner */}
+      {/* Announcement Banner - Above Navbar */}
       {showAnnouncement && !isScrolled && (
-        <div className="bg-gradient-to-r from-[#FF8C42] to-[#FF6B35] text-white py-3 px-6 relative z-50">
+        <div className="fixed top-0 left-0 right-0 bg-gradient-to-r from-[#FF8C42] to-[#FF6B35] text-white py-3 px-6 z-50">
           <div className="max-w-[1400px] mx-auto flex items-center justify-between">
             <div className="flex items-center gap-2 flex-1 justify-center">
-              <span className="hidden sm:inline">⚡</span>
+              
               <span style={{ fontWeight: '500', fontSize: '14px' }}>
-                Start your UK recruitment journey - Applications are now open for January 2026 intake!
+                Start your hiring journey today! Premium recuirement solutions available.
               </span>
             </div>
             <button 
@@ -53,12 +54,14 @@ export default function App() {
         </div>
       )}
       
-      <Navigation activeSection={activeSection} scrollToSection={scrollToSection} />
+      <Navigation activeSection={activeSection} scrollToSection={scrollToSection} showAnnouncement={showAnnouncement && !isScrolled} />
       
       <main>
         <section id="home">
-          <Hero scrollToSection={scrollToSection} />
+          <Hero scrollToSection={scrollToSection} showAnnouncement={showAnnouncement && !isScrolled} />
         </section>
+        
+        <Stats />
         
         <section id="about">
           <About />
