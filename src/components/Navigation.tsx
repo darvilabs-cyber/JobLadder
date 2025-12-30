@@ -6,9 +6,10 @@ interface NavigationProps {
   activeSection: string;
   scrollToSection: (section: string) => void;
   showAnnouncement?: boolean;
+  isScrolled?: boolean;
 }
 
-export default function Navigation({ activeSection, scrollToSection, showAnnouncement = false }: NavigationProps) {
+export default function Navigation({ activeSection, scrollToSection, showAnnouncement = false, isScrolled = false }: NavigationProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
@@ -25,7 +26,7 @@ export default function Navigation({ activeSection, scrollToSection, showAnnounc
   };
 
   return (
-    <nav className="fixed left-0 right-0 bg-white/80 backdrop-blur-xl border-b border-black/5 z-40" style={{ top: showAnnouncement ? '48px' : '12px' }}>
+    <nav className="fixed left-0 right-0 bg-white/80 backdrop-blur-xl border-b border-black/5 z-40" style={{ top: isScrolled ? '0' : (showAnnouncement ? '48px' : '12px') }}>
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="flex justify-between items-center h-24">
           {/* Logo */}

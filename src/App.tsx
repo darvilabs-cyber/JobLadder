@@ -54,7 +54,7 @@ export default function App() {
         </div>
       )}
       
-      <Navigation activeSection={activeSection} scrollToSection={scrollToSection} showAnnouncement={showAnnouncement && !isScrolled} />
+      <Navigation activeSection={activeSection} scrollToSection={scrollToSection} showAnnouncement={showAnnouncement && !isScrolled} isScrolled={isScrolled} />
       
       <main>
         <section id="home">
